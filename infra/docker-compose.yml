@@ -1,0 +1,71 @@
+version: "3"
+
+services:
+  tailscale:
+    image: tailscale/tailscale
+    container_name: tailscale
+    volumes:
+      - /var/lib/tailscale:/var/lib/tailscale
+      - /dev/net/tun:/dev/net/tun
+    network_mode: host
+    privileged: true
+    environment:
+      - TS_AUTH_KEY=${TAILSCALE_AUTH_KEY}
+
+  photoprism:
+    image: photoprism/photoprism:latest
+    container_name: photoprism
+    depends_on:
+      - photoprism-db
+    ports:
+      - "2342:2342"
+    volumes:
+      - /home/paolo/photoprism/storage:/photoprism/storage
+      - home/paolo/photos:/photoprism/originals
+    environment:
+      PHOTOPRISM_ADMIN_PASSWORD: ${PHOTOPRISM_ADMIN_PASSWORD}
+      PHOTOPRISM_DATABASE_DRIVER: "mysql"
+      PHOTOPRISM_DATABASE_SERVER: "photoprism-db:3306"
+      PHOTOPRISM_DATABASE_NAME: "photoprism"
+      PHOTOPRISM_DATABASE_USER: "photoprism"
+      PHOTOPRISM_DATABASE_PASSWORD: ${PHOTOPRISM_DB_PASSWORD}
+
+  photoprism-db:
+    image: mariadb:10.6
+    container_name: photoprism-db
+    restart: unless-stopped
+    command: mysqld --transaction-isolation=READ-COMMITTED --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --max-connections=512 --innodb-rollback-on-timeout=OFF --innodb-lock-wait-timeout=120
+    volumes:
+      - /home/paolo/photoprism/db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: "photoprism"
+      MYSQL_USER: "photoprism"
+      MYSQL_PASSWORD: ${PHOTOPRISM_DB_PASSWORD}
+
+  code-server:
+    image: codercom/code-server:latest
+    container_name: code-server
+    ports:
+      - "8080:8080"
+    environment:
+      - PASSWORD=${CODE_SERVER_PASSWORD}
+
+  adguard:
+    image: adguard/adguardhome
+    container_name: adguard
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "3000:3000/tcp"
+    volumes:
+      - ./adguard/work:/opt/adguardhome/work
+      - ./adguard/conf:/opt/adguardhome/conf
+
+  dashy:
+    image: lissy93/dashy
+    container_name: dashy
+    ports:
+      - "4000:80"
+    volumes:
+      - ./dashy/conf.yml:/app/public/conf.yml

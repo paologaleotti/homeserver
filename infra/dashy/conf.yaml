@@ -1,0 +1,27 @@
+---
+pageInfo:
+  title: Home Server Dashboard
+
+sections:
+- name: Home Server Services
+  items:
+  
+  - title: PhotoPrism
+    description: Photo Management
+    icon: fas fa-camera
+    url: http://localhost:2342
+
+  - title: VS Code Server
+    description: Web-based IDE
+    icon: fas fa-code
+    url: http://localhost:8080
+
+  - title: AdGuard Home
+    description: DNS Ad Blocker
+    icon: fas fa-shield-alt
+    url: http://localhost:3000
+
+  - title: Tailscale
+    description: Tailscale Network Management
+    icon: fas fa-network-wired
+    url: https://login.tailscale.com/admin
