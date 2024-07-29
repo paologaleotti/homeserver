@@ -12,7 +12,7 @@
   boot.loader.grub.useOSProber = true;
 
   ## Networking
-  networking.hostName = "nixos";
+  networking.hostName = "crispy-svr";
   networking.networkmanager.enable = true;
 
   networking.firewall.allowedTCPPorts = [ ... ];
