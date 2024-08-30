@@ -10,6 +10,7 @@ services:
       - grafana-storage:/var/lib/grafana
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=admin
+    restart: unless-stopped
     depends_on:
       - prometheus
 
@@ -25,6 +26,7 @@ services:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'
       - '--storage.tsdb.retention.time=14d'
+    restart: unless-stopped
     depends_on:
       - prometheus-node-exporter
 
