@@ -2,22 +2,21 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
     ];
 
   ## Bootloader
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/nvme0n1";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   ## Networking
   networking.hostName = "crispy-svr";
   networking.networkmanager.enable = true;
 
-  networking.firewall.allowedTCPPorts = [ ... ];
-  networking.firewall.allowedUDPPorts = [ ... ];
-  networking.firewall.enable = true;
+  networking.firewall.allowedTCPPorts = [ 9090 8080 ];
+  networking.firewall.allowedUDPPorts = [ ];
+  networking.firewall.enable = false;
 
   ## Locale settings
   time.timeZone = "Europe/Rome";
@@ -34,6 +33,7 @@
 
   ## Services
   services.openssh.enable = true;
+  services.tailscale.enable = true; # VPN
 
   virtualisation.docker.enable = true;
   virtualisation.docker.rootless = {
@@ -41,16 +41,31 @@
   setSocketVariable = true;
 };
 
+ services.cockpit = {
+    enable = true;
+    port = 9090;
+    settings = {
+      WebService = {
+        AllowUnencrypted = true;
+     };
+   };
+ };
+
   ## Packages
   environment.systemPackages = with pkgs; [
     vim
     wget
+    curl
     git
     btop
     htop
     tmux
     neofetch
+    cockpit
+    gh
   ];
+
+  programs.nix-ld.enable = true;
 
 
   # This value determines the NixOS release from which the default
