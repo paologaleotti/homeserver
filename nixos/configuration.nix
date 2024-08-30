@@ -14,8 +14,8 @@
   networking.hostName = "crispy-svr";
   networking.networkmanager.enable = true;
 
-  networking.firewall.allowedTCPPorts = [ 9090 8080 ];
-  networking.firewall.allowedUDPPorts = [ ];
+  networking.firewall.allowedTCPPorts = [ 9090 8080 9000 3000 ];
+  networking.firewall.allowedUDPPorts = [ 41641 ];
   networking.firewall.enable = false;
 
   ## Locale settings
@@ -37,11 +37,11 @@
 
   virtualisation.docker.enable = true;
   virtualisation.docker.rootless = {
-  enable = true;
-  setSocketVariable = true;
-};
+    enable = true;
+    setSocketVariable = true;
+  };
 
- services.cockpit = {
+  services.cockpit = {
     enable = true;
     port = 9090;
     settings = {
@@ -49,7 +49,13 @@
         AllowUnencrypted = true;
      };
    };
- };
+  };
+
+  services.prometheus.exporters.node = {
+    enable = true;
+    port = 9100;
+    enabledCollectors = [ "systemd" ];
+  };
 
   ## Packages
   environment.systemPackages = with pkgs; [
