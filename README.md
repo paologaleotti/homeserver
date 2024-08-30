@@ -29,7 +29,6 @@ Yes, i know it is possible to setup WireGuard to NAT-traverse using an online VP
 
 Running on Docker containers:
 
-- [Tailscale agent](https://tailscale.com): VPN to access the network from remote
 - [PhotoPrism](https://www.photoprism.app/): Self-hosted photo archive solution
   - note: i will probably switch to [Immich](https://immich.app/) when it is more stable.
 - [Backrest](https://github.com/garethgeorge/backrest): Automatic data backup
@@ -38,4 +37,5 @@ Running on Docker containers:
 
 Running on the host:
 
-- [NixOS Cockpit](https://fictionbecomesfact.com/nixos-cockpit): Web-based system administration tool
+- [Tailscale client](https://tailscale.com): VPN to access the network from remote
+- [Cockpit](https://cockpit-project.org/): Web-based system administration tool
