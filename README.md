@@ -29,7 +29,7 @@ Yes, i know it is possible to setup WireGuard to NAT-traverse using an online VP
 
 Running on Docker containers:
 
-- [Homarr](https://dashy.to/): Server dashboard
+- [Homarr](https://homarr.dev/): Server dashboard
 - [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome): Network level ad blocking DNS
 - [PhotoPrism](https://www.photoprism.app/): Self-hosted photo archive solution
   - note: i will probably switch to [Immich](https://immich.app/) when it is more stable.
