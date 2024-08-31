@@ -8,6 +8,16 @@
       "id": "caa4063b-04e1-4c2e-8637-517fd4b8dc21",
       "name": "Monitoring",
       "position": 1
+    },
+    {
+      "id": "06378b04-9a2e-40de-9950-cb8088cc54a2",
+      "name": "Network",
+      "position": 2
+    },
+    {
+      "id": "5b32c3d7-7e4a-4ceb-b56d-6c49dc29c783",
+      "name": "Media",
+      "position": 3
     }
   ],
   "wrappers": [
@@ -18,58 +28,17 @@
     {
       "id": "9fdc6614-b81c-4a8d-8ddb-1a4b644284b5",
       "position": 1
+    },
+    {
+      "id": "75fadf01-544b-43db-8726-d0e8a22ab768",
+      "position": 2
+    },
+    {
+      "id": "31a4fa9a-bdbf-44ad-bcf5-afd864aff27e",
+      "position": 3
     }
   ],
   "apps": [
-    {
-      "id": "def6a18b-8058-4127-867b-b90819595e4c",
-      "name": "Grafana",
-      "url": "http://grafana:3000",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/grafana.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "[homarr_base]:3000/d/rYdddlPWk/system-overview?orgId=1&from=now-6h&to=now&refresh=5s"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "caa4063b-04e1-4c2e-8637-517fd4b8dc21"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 1,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
     {
       "id": "d1c58a41-6c8f-42f0-8b16-e0d1f727e482",
       "name": "Cockpit",
@@ -167,9 +136,268 @@
         "type": null,
         "properties": []
       }
+    },
+    {
+      "id": "def6a18b-8058-4127-867b-b90819595e4c",
+      "name": "Grafana",
+      "url": "http://grafana:3000",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/grafana.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "[homarr_base]:3000/d/rYdddlPWk/system-overview?orgId=1&from=now-6h&to=now&refresh=5s"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "caa4063b-04e1-4c2e-8637-517fd4b8dc21"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 1,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "f4c97bf9-42d0-4a39-be1e-7299db567d2f",
+      "name": "AdGuard",
+      "url": "http://adguardhome",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/adguard-home.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "[homarr_base]:8888"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "06378b04-9a2e-40de-9950-cb8088cc54a2"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": "adGuardHome",
+        "properties": [
+          {
+            "field": "username",
+            "type": "public",
+            "value": "paolo"
+          },
+          {
+            "field": "password",
+            "type": "private",
+            "value": "piku2002"
+          }
+        ]
+      }
     }
   ],
-  "widgets": [],
+  "widgets": [
+    {
+      "id": "617a1c03-23a3-44b5-a6eb-d4fe05683a83",
+      "type": "dns-hole-summary",
+      "properties": {
+        "usePiHoleColors": true,
+        "layout": "grid"
+      },
+      "area": {
+        "type": "sidebar",
+        "properties": {
+          "location": "left"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        }
+      }
+    },
+    {
+      "id": "b70fcaf4-4f8e-436a-b0c1-22bf704913ba",
+      "type": "torrents-status",
+      "properties": {
+        "displayCompletedTorrents": true,
+        "displayActiveTorrents": true,
+        "speedLimitOfActiveTorrents": 10,
+        "displayStaleTorrents": true,
+        "labelFilterIsWhitelist": true,
+        "labelFilter": [],
+        "displayRatioWithFilter": true,
+        "columnOrdering": true,
+        "rowSorting": true,
+        "columns": [
+          "up",
+          "down",
+          "eta",
+          "progress"
+        ],
+        "nameColumnSize": 2
+      },
+      "area": {
+        "type": "sidebar",
+        "properties": {
+          "location": "left"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 4
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        }
+      }
+    },
+    {
+      "id": "5d685458-9433-4d20-bab1-880e55e4514a",
+      "type": "dlspeed",
+      "properties": {},
+      "area": {
+        "type": "sidebar",
+        "properties": {
+          "location": "left"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 2
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        }
+      }
+    }
+  ],
   "settings": {
     "common": {
       "searchEngine": {
@@ -179,7 +407,7 @@
     },
     "customization": {
       "layout": {
-        "enabledLeftSidebar": false,
+        "enabledLeftSidebar": true,
         "enabledRightSidebar": false,
         "enabledDocker": false,
         "enabledPing": true,
@@ -199,7 +427,7 @@
       "gridstack": {
         "columnCountSmall": 3,
         "columnCountMedium": 6,
-        "columnCountLarge": 10
+        "columnCountLarge": 11
       },
       "backgroundImageAttachment": "fixed",
       "backgroundImageRepeat": "no-repeat",

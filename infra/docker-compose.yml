@@ -50,6 +50,22 @@ services:
       - ./homarr/icons:/app/public/icons
       - ./homarr/data:/data
 
+  adguardhome:
+    image: adguard/adguardhome
+    container_name: adguardhome
+    ports:
+      - 53:53/tcp
+      - 53:53/udp
+      - 784:784/udp
+      - 853:853/tcp
+      - 3001:3000/tcp
+      - 8888:80/tcp
+      - 443:443/tcp
+    volumes:
+      - ./adguard/work:/opt/adguardhome/work
+      - ./adguard/conf:/opt/adguardhome/conf
+    restart: unless-stopped
+
 volumes:
   grafana-storage:
   prometheus-data:
