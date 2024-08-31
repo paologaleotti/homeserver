@@ -36,10 +36,6 @@
   services.tailscale.enable = true; # VPN
 
   virtualisation.docker.enable = true;
-  virtualisation.docker.rootless = {
-    enable = true;
-    setSocketVariable = true;
-  };
 
   services.cockpit = {
     enable = true;
