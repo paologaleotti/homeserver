@@ -10,7 +10,7 @@ users:
 auth_attempts: 5
 block_auth_min: 15
 http_proxy: ""
-language: ""
+language: en
 theme: auto
 dns:
   bind_hosts:
@@ -134,6 +134,22 @@ filters:
     url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_27.txt
     name: OISD Blocklist Big
     id: 1725102478
+  - enabled: true
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_48.txt
+    name: HaGeZi's Pro Blocklist
+    id: 1725102479
+  - enabled: true
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_55.txt
+    name: HaGeZi's Badware Hoster Blocklist
+    id: 1725102480
+  - enabled: true
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_24.txt
+    name: 1Hosts (Lite)
+    id: 1725102481
+  - enabled: true
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_4.txt
+    name: Dan Pollock's List
+    id: 1725102483
 whitelist_filters: []
 user_rules: []
 dhcp:

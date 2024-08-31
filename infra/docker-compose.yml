@@ -66,6 +66,26 @@ services:
       - ./adguard/conf:/opt/adguardhome/conf
     restart: unless-stopped
 
+  qbittorrent-nox:
+    image: qbittorrentofficial/qbittorrent-nox:latest
+    container_name: qbittorrent-nox
+    environment:
+      - QBT_EULA=accept
+      - QBT_VERSION=latest
+      - QBT_WEBUI_PORT=6060
+    ports:
+      - 6881:6881/tcp
+      - 6881:6881/udp
+      - 6060:6060/tcp
+    read_only: true
+    stop_grace_period: 30m
+    tmpfs:
+      - /tmp
+    tty: true
+    volumes:
+      - ./qbittorrent:/config
+      - /home/paolo/downloads:/downloads
+
 volumes:
   grafana-storage:
   prometheus-data:
