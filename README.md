@@ -27,6 +27,9 @@ Yes, i know it is possible to setup WireGuard to NAT-traverse using an online VP
 
 ## Services
 
+![dashboard](https://github.com/user-attachments/assets/50eaa6e6-9982-485f-ac47-e520742cc091)
+
+
 Running on Docker containers:
 
 - [Homarr](https://homarr.dev/): Server dashboard
