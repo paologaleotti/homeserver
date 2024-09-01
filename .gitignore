@@ -1,3 +1,7 @@
 *.sqlite
 */adguard/work
 */qbittorrent
+*/prowlarr
+*/radarr
+*/sonarr
+*/jellyfin

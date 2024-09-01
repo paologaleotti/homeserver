@@ -40,55 +40,6 @@
   ],
   "apps": [
     {
-      "id": "a0ce2202-3d03-4a99-a4d7-f34afb8c89b0",
-      "name": "Prometheus",
-      "url": "http://prometheus:9090",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/prometheus.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "[homarr_base]:9091"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "caa4063b-04e1-4c2e-8637-517fd4b8dc21"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 2,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
       "id": "def6a18b-8058-4127-867b-b90819595e4c",
       "name": "Grafana",
       "url": "http://grafana:3000",
@@ -112,7 +63,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "[homarr_base]:3000/d/rYdddlPWk/system-overview?orgId=1&from=now-6h&to=now&refresh=5s"
+        "externalUrl": "[homarr_base]:3000/d/rYdddlPWk/system-overview?orgId=1&from=now-24h&to=now&refresh=5s"
       },
       "area": {
         "type": "category",
@@ -124,6 +75,104 @@
         "lg": {
           "location": {
             "x": 1,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "b80f7cd7-5515-4428-bc33-7b8e1ef3c2d1",
+      "name": "Sonarr",
+      "url": "http://sonarr:8989",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/sonarr.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "[homarr_base]:8989"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "5b32c3d7-7e4a-4ceb-b56d-6c49dc29c783"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 1,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "d1c58a41-6c8f-42f0-8b16-e0d1f727e482",
+      "name": "Cockpit",
+      "url": "http://192.168.0.160:9090",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/cockpit-cms.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "[homarr_base]:9090"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "caa4063b-04e1-4c2e-8637-517fd4b8dc21"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 0,
             "y": 0
           },
           "size": {
@@ -198,11 +247,11 @@
       }
     },
     {
-      "id": "d1c58a41-6c8f-42f0-8b16-e0d1f727e482",
-      "name": "Cockpit",
-      "url": "http://192.168.0.160:9090",
+      "id": "d45c7670-01d0-4174-8357-244d223fbcbd",
+      "name": "Jellyfin",
+      "url": "http://jellyfin:8096",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/cockpit-cms.svg",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/jellyfin.svg",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -221,7 +270,56 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "[homarr_base]:9090"
+        "externalUrl": "[homarr_base]:8096"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "5b32c3d7-7e4a-4ceb-b56d-6c49dc29c783"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "a0ce2202-3d03-4a99-a4d7-f34afb8c89b0",
+      "name": "Prometheus",
+      "url": "http://prometheus:9090",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/prometheus.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "[homarr_base]:9091"
       },
       "area": {
         "type": "category",
@@ -232,7 +330,7 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 0,
+            "x": 2,
             "y": 0
           },
           "size": {
@@ -304,6 +402,104 @@
             "value": "piku2002"
           }
         ]
+      }
+    },
+    {
+      "id": "fbd1f5da-f614-4a1b-9c92-8b7c3ec2e4f5",
+      "name": "Prowlarr",
+      "url": "http://prowlarr:9696",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/prowlarr.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "[homarr_base]:9696"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "5b32c3d7-7e4a-4ceb-b56d-6c49dc29c783"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 2,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "9e67624d-efde-4383-bc94-9628fc6ea1a7",
+      "name": "Radarr",
+      "url": "http://radarr:7878",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/radarr.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "[homarr_base]:7878"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "5b32c3d7-7e4a-4ceb-b56d-6c49dc29c783"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 3,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
       }
     }
   ],

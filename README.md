@@ -36,6 +36,9 @@ Running on Docker containers:
 - [Backrest](https://github.com/garethgeorge/backrest): Automatic data backup
 - [Prometheus](https://prometheus.io/): Metrics, alerts gathering
 - [Grafana](https://grafana.com/): Data visualization
+- *arr suite (Radarr, Sonarr, Prowlarr): Services for pirating movies and TV shows
+- [Jellyfin](https://jellyfin.org/): Media server
+- [qBittorrent NOX](https://hub.docker.com/r/qbittorrentofficial/qbittorrent-nox): Web UI for qbittorrent
 
 Running on the host:
 

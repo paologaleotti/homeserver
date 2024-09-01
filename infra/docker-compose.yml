@@ -84,7 +84,67 @@ services:
     tty: true
     volumes:
       - ./qbittorrent:/config
-      - /home/paolo/downloads:/downloads
+      - ${DOWNLOADS_PATH}:/downloads
+    restart: unless-stopped
+
+  # MULTIMEDIA SUITE
+  sonarr:
+    image: linuxserver/sonarr:latest
+    container_name: sonarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${ARR_STACK_TIMEZONE}
+    volumes:
+      - ./sonarr:/config
+      - ${TV_SHOWS_PATH}:/tv
+      - ${DOWNLOADS_PATH}:/downloads
+    ports:
+      - 8989:8989
+    restart: unless-stopped
+
+  radarr:
+    image: linuxserver/radarr:latest
+    container_name: radarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${ARR_STACK_TIMEZONE}
+    volumes:
+      - ./radarr:/config
+      - ${MOVIES_PATH}:/movies
+      - ${DOWNLOADS_PATH}:/downloads
+    ports:
+      - 7878:7878
+    restart: unless-stopped
+
+  prowlarr:
+    image: linuxserver/prowlarr:latest
+    container_name: prowlarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${ARR_STACK_TIMEZONE}
+    volumes:
+      - ./prowlarr:/config
+    ports:
+      - 9696:9696
+    restart: unless-stopped
+
+  jellyfin:
+    image: linuxserver/jellyfin:latest
+    container_name: jellyfin
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${ARR_STACK_TIMEZONE}
+    volumes:
+      - ./jellyfin:/config
+      - ${TV_SHOWS_PATH}:/data/tvshows
+      - ${MOVIES_PATH}:/data/movies
+    ports:
+      - 8096:8096
+    restart: unless-stopped
 
 volumes:
   grafana-storage:
