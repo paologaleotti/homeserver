@@ -63,6 +63,25 @@
 
   programs.nix-ld.enable = true;
 
+  # Intel graphics drivers
+
+  nixpkgs.config.packageOverrides = pkgs: {
+    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
+  };
+
+  hardware.opengl = { # hardware.opengl in 24.05
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      vaapiVdpau
+      intel-compute-runtime # OpenCL filter support (hardware tonemapping and subtitle burn-in)
+      intel-media-sdk # QSV up to 11th gen
+    ];
+  };
+
+  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Optionally, set the environment variable
+
+
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
