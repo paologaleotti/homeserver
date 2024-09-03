@@ -16,7 +16,7 @@
 
   networking.firewall.allowedTCPPorts = [ 9090 8080 9000 3000 ];
   networking.firewall.allowedUDPPorts = [ 41641 ];
-  networking.firewall.enable = false;
+  networking.firewall.enable = false; # TODO turn on firewall eventually
 
   ## Locale settings
   time.timeZone = "Europe/Rome";
@@ -59,6 +59,7 @@
     neofetch
     cockpit
     gh
+    lazydocker
   ];
 
   programs.nix-ld.enable = true;
@@ -69,7 +70,7 @@
     vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
   };
 
-  hardware.opengl = { # hardware.opengl in 24.05
+  hardware.opengl = {
     enable = true;
     extraPackages = with pkgs; [
       intel-media-driver
@@ -78,8 +79,7 @@
       intel-media-sdk # QSV up to 11th gen
     ];
   };
-
-  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Optionally, set the environment variable
+  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
 
 
 

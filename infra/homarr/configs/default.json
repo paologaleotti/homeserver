@@ -40,104 +40,6 @@
   ],
   "apps": [
     {
-      "id": "d1c58a41-6c8f-42f0-8b16-e0d1f727e482",
-      "name": "Cockpit",
-      "url": "http://192.168.0.160:9090",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/cockpit-cms.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "[homarr_base]:9090"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "caa4063b-04e1-4c2e-8637-517fd4b8dc21"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
-      "id": "d45c7670-01d0-4174-8357-244d223fbcbd",
-      "name": "Jellyfin",
-      "url": "http://jellyfin:8096",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/jellyfin.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "[homarr_base]:8096"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "5b32c3d7-7e4a-4ceb-b56d-6c49dc29c783"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      }
-    },
-    {
       "id": "a0ce2202-3d03-4a99-a4d7-f34afb8c89b0",
       "name": "Prometheus",
       "url": "http://prometheus:9090",
@@ -184,66 +86,6 @@
       "integration": {
         "type": null,
         "properties": []
-      }
-    },
-    {
-      "id": "331ba91d-7aac-478b-a2c0-4c58063a2cbc",
-      "name": "qBittorrent",
-      "url": "http://qbittorrent-nox:6060",
-      "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/qbittorrent.svg",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "network": {
-        "enabledStatusChecker": true,
-        "statusCodes": [
-          "200",
-          "301",
-          "302",
-          "304",
-          "307",
-          "308"
-        ]
-      },
-      "behaviour": {
-        "isOpeningNewTab": true,
-        "externalUrl": "[homarr_base]:6060"
-      },
-      "area": {
-        "type": "category",
-        "properties": {
-          "id": "06378b04-9a2e-40de-9950-cb8088cc54a2"
-        }
-      },
-      "shape": {
-        "lg": {
-          "location": {
-            "x": 1,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      },
-      "integration": {
-        "type": "qBittorrent",
-        "properties": [
-          {
-            "field": "username",
-            "type": "public",
-            "value": "paolo"
-          },
-          {
-            "field": "password",
-            "type": "private",
-            "value": "piku2002"
-          }
-        ]
       }
     },
     {
@@ -501,69 +343,167 @@
         "type": null,
         "properties": []
       }
-    }
-  ],
-  "widgets": [
+    },
     {
-      "id": "b70fcaf4-4f8e-436a-b0c1-22bf704913ba",
-      "type": "torrents-status",
-      "properties": {
-        "displayCompletedTorrents": true,
-        "displayActiveTorrents": true,
-        "speedLimitOfActiveTorrents": 10,
-        "displayStaleTorrents": true,
-        "labelFilterIsWhitelist": true,
-        "labelFilter": [],
-        "displayRatioWithFilter": true,
-        "columnOrdering": true,
-        "rowSorting": true,
-        "columns": [
-          "up",
-          "down",
-          "eta",
-          "progress"
-        ],
-        "nameColumnSize": 2
+      "id": "d1c58a41-6c8f-42f0-8b16-e0d1f727e482",
+      "name": "Cockpit",
+      "url": "http://192.168.0.160:9090",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/cockpit-cms.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "[homarr_base]:9090"
       },
       "area": {
-        "type": "sidebar",
+        "type": "category",
         "properties": {
-          "location": "left"
+          "id": "caa4063b-04e1-4c2e-8637-517fd4b8dc21"
         }
       },
       "shape": {
-        "sm": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 2,
-            "height": 2
-          }
-        },
-        "md": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 2,
-            "height": 2
-          }
-        },
         "lg": {
           "location": {
             "x": 0,
-            "y": 4
+            "y": 0
           },
           "size": {
-            "width": 2,
-            "height": 2
+            "width": 1,
+            "height": 1
           }
         }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
       }
     },
+    {
+      "id": "331ba91d-7aac-478b-a2c0-4c58063a2cbc",
+      "name": "qBittorrent",
+      "url": "http://qbittorrent-nox:6060",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/qbittorrent.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "[homarr_base]:6060"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "06378b04-9a2e-40de-9950-cb8088cc54a2"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 1,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": "qBittorrent",
+        "properties": [
+          {
+            "field": "username",
+            "type": "public",
+            "value": "paolo"
+          },
+          {
+            "field": "password",
+            "type": "private",
+            "value": "piku2002"
+          }
+        ]
+      }
+    },
+    {
+      "id": "d45c7670-01d0-4174-8357-244d223fbcbd",
+      "name": "Jellyfin",
+      "url": "http://jellyfin:8096",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/jellyfin.svg",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "[homarr_base]:8096"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "5b32c3d7-7e4a-4ceb-b56d-6c49dc29c783"
+        }
+      },
+      "shape": {
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    }
+  ],
+  "widgets": [
     {
       "id": "617a1c03-23a3-44b5-a6eb-d4fe05683a83",
       "type": "dns-hole-summary",
@@ -645,6 +585,66 @@
           "location": {
             "x": 0,
             "y": 2
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        }
+      }
+    },
+    {
+      "id": "b70fcaf4-4f8e-436a-b0c1-22bf704913ba",
+      "type": "torrents-status",
+      "properties": {
+        "displayCompletedTorrents": true,
+        "displayActiveTorrents": true,
+        "speedLimitOfActiveTorrents": 10,
+        "displayStaleTorrents": true,
+        "labelFilterIsWhitelist": true,
+        "labelFilter": [],
+        "displayRatioWithFilter": true,
+        "columnOrdering": true,
+        "rowSorting": true,
+        "columns": [
+          "up",
+          "down",
+          "eta",
+          "progress"
+        ],
+        "nameColumnSize": 2
+      },
+      "area": {
+        "type": "sidebar",
+        "properties": {
+          "location": "left"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 4
           },
           "size": {
             "width": 2,
