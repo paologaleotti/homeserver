@@ -3,4 +3,6 @@ export MOVIES_PATH="/home/paolo/media/movies"
 export DOWNLOADS_PATH="/home/paolo/downloads"
 export ARR_STACK_TIMEZONE="Europe/Rome"
 
+docker compose down
 docker compose up -d
+
